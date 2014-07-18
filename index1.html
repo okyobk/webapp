@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>Webapp_Ipad</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+     <script src="js/jquery.js" ></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="js/javascript.js" type="text/javascript" ></script>
+   
+</head>
+<body>
+<div class="backgroup_1" style="background:url(images/nen2.png) no-repeat top left; ">
+<div class="main">
+
+
+<div class="main_step1">
+
+<ul class="list_item">
+<!-- <br><br> -->
+<div id="text-notice1">※分からない場合は未選択でもかまいません。</div>
+<!-- <br> -->
+<div style="clear:both;">&nbsp;</div>
+
+<div class="label1" style="text-align: center;"></div> 
+<div class="label2" style="text-align: center;"></div>
+<div style="clear:both;">&nbsp;</div>
+<div class="label3"></div> 
+<div class="label4"></div>
+
+<div style="clear:both;">&nbsp;</div>
+
+<div id="text-notice1" style="margin-top: 30px;">※遠近両用レンズの場合のみご入力ください。</div>
+<div style="clear:both;">&nbsp;</div>
+<table id="table4" >
+        <tr>
+            <td style="width: 60px;">
+                <input type="radio" id ="満足" class="input99" name="buttoncheck2" onclick="checkbox1('満足')"><label for="満足"> </label>
+
+                <div class="button1" >満足</div>
+            </td>
+            <td style="width: 60px;">
+                <input type="radio" id ="ほぼ満足" class="input99" name="buttoncheck2" onclick="checkbox1('ほぼ満足')"><label for="ほぼ満足"> </label>
+
+                <div class="button1" >ほぼ満足</div>
+            </td>
+            <td style="width: 60px;">
+                <input type="radio" id ="普通" class="input99" name="buttoncheck2" onclick="checkbox1('普通')"><label for="普通"> </label>
+
+                <div class="button1" >普通</div>
+            </td>
+            <td style="width: 60px;">
+                <input type="radio" id ="やや不満" class="input99" name="buttoncheck2" onclick="checkbox1('やや不満')"><label for="やや不満"> </label>
+
+                <div class="button1" >やや不満</div>
+            </td>
+            <td style="width: 60px;">
+                <input type="radio" id ="不満" class="input99" name="buttoncheck2" onclick="checkbox1('不満')"><label for="不満"> </label>
+
+                <div class="button1" >不満</div>
+            </td>
+            
+        </tr>
+        
+    </table>
+    <div style="clear:both;">&nbsp;</div>
+
+    <a href="index2.html"><input type="button" name="button-check" class="next1" style="margin-top:30px; margin-right:-55px"></a>
+    <a href="index.html"><input type="button" name="button-check" class="back1" style="margin-top:30px; margin-right:5px"></a>
+</ul>
+</div>
+</div>
+</div>
+<script>
+function checkbox1(value1)
+{
+    localStorage.setItem("check2",value1);
+    // localStorage.setItem("checkvalue2","1");
+    console.log(localStorage.getItem("check2",value1));
+    // if(document.getElementById(localStorage.getItem("check2")).checked = true)
+    // document.getElementById(localStorage.getItem("check2")).checked = true;
+}
+
+if (localStorage.getItem("check2")!=null) {
+            // console.log('lagtu');
+            document.getElementById(localStorage.getItem("check2")).checked = true;
+            console.log('lagtu');
+        }
+</script>
+</body>
+</html>
