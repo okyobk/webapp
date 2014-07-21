@@ -15,7 +15,9 @@
 <div class="main_step1">
 
 <ul class="list_item">
+<!-- <br><br> -->
 <div id="text-notice1">※分からない場合は未選択でもかまいません。</div>
+<!-- <br> -->
 <div style="clear:both;">&nbsp;</div>
 
 <div class="label1" style="text-align: center;"></div> 
@@ -71,10 +73,14 @@
 function checkbox1(value1)
 {
     localStorage.setItem("check2",value1);
+    // localStorage.setItem("checkvalue2","1");
     console.log(localStorage.getItem("check2",value1));
+    // if(document.getElementById(localStorage.getItem("check2")).checked = true)
+    // document.getElementById(localStorage.getItem("check2")).checked = true;
 }
 
 if (localStorage.getItem("check2")!=null) {
+            // console.log('lagtu');
             document.getElementById(localStorage.getItem("check2")).checked = true;
             console.log('lagtu');
         }
