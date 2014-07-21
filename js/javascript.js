@@ -44,7 +44,7 @@ $( document ).ready(function(){
 		model1[10] = "HOYALUX 　トリニティー　Ｍタイプ　14mm";
 
 	var model2 = new Array;
-		model2[1] = "シークラフトプログレッシブ/？？削除しましょう";
+		model2[1] = "シークラフトプログレッシブ/ 削除しましょう";
 		model2[2] = "シープラウド・Ａｉ/14mm";
 		model2[3] = "シープラウド・Ａｉ/12mm";
 		model2[4] = "シープラウド・Ａｉ/10mm";
