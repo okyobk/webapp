@@ -487,34 +487,30 @@ $( document ).ready(function(){
 					if ($("#"+rel1).html("")){
 						$("#"+rel1).html("_");
 					}
-					console.log(rel1.split("_")[1]);
+
 					if (o==2 && (rel1.split("_")[1])==8) {
 					rel1=rel1.substring(0,5)+o+"_"+"1";
 					rel3=$("#"+rel1).html();
 					if ($("#"+rel1).html("")){
 						$("#"+rel1).html("_");
 						}
-					if (rel3.charAt(0)!="_") {
+					else if (rel3.charAt(0)!="_") {
 						$("#"+rel1).html(rel3+"_");
 						$('#table3_total').html(rel3+"_");
 						}
 					}
 
-					if (o==3 && (rel1.split("_")[1])==8) {
+					else if (o==3 && (rel1.split("_")[1])==8) {
 						$("#keyboard1").hide();
 	   					$("#table3").hide();
 					}
 
-					if (rel3.charAt(0)!="_") {
+					else if (rel3.charAt(0)!="_") {
 						$("#"+rel1).html(rel3+"_");
 						$('#table3_total').html(rel3+"_");
 					}
 
 					}
-					if ((o==4) && (rel1.split("_")[1])==7) {
-						$("#keyboard1").hide();
-	   					$("#table3").hide();
-					}			
 				
 				$('#table3_total').html("_");
 				
@@ -530,7 +526,7 @@ $( document ).ready(function(){
 				localStorage.setItem("lat", localStorage.getItem("lat")+":"+lat1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-1));
 				}
 
-				if (o==1 || o==2 || (lat1.split("_")[1])<=7 ) {
+				if (o==1 || (lat1.split("_")[1])<=7 ) {
 
 					lat1=lat1.substring(0, lat1.length-1)+((+lat1.split("_")[1])+(+1));
 					rel3=$("#"+lat1).html();
@@ -539,11 +535,11 @@ $( document ).ready(function(){
 					}
 
 					if ((lat1.split("_")[1])==8) {
-						$("#keyboard1").hide();
+	   					$("#keyboard3").hide();	
 	   					$("#table3").hide();
 					}
 
-					if (rel3.charAt(0)!="_") {
+					else if (rel3.charAt(0)!="_") {
 						$("#"+lat1).html(rel3+"_");
 						$('#table3_total').html(rel3+"_");
 					}
@@ -606,19 +602,19 @@ $('#exit').click(function() {
 		    $("#"+lat1).html("");
 		   }
 
-		   // if (rel3.charAt(0)!="_") {
-			  //  	$("#"+lat1).html(rel3.substring(0,rel3.indexOf("_")));
-		   // }
+		   else if (rel3.charAt(0)!="_") {
+			   	$("#"+lat1).html(rel3.substring(0,rel3.indexOf("_")));
+		   }
+		   	$("#keyboard3").hide();
+	   		$("#table3").hide();
 		}
 		
 	   if (rel3=="_") {
 		    $("#"+rel1).html("");
-		    // $("#"+lat1).html("");
 	   }
 
-	   if (rel3.charAt(0)!="_") {
+	   else if (rel3.charAt(0)!="_") {
 		   	$("#"+rel1).html(rel3.substring(0,rel3.indexOf("_")));
-		   	// $("#"+lat1).html(rel3.substring(0,rel3.indexOf("_")));
 	   }
 
 	   $("#keyboard1").hide();
