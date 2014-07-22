@@ -143,18 +143,14 @@
 </div>
 </div>
 <script>
-
-
     function checkbox(value)
-{
-    localStorage.setItem("check1",value);
-    console.log(localStorage.getItem("check1",value));
-}
+    {
+        localStorage.setItem("check1",value);
+    }
 
-if (localStorage.getItem("check1")!=null) {
-            document.getElementById(localStorage.getItem("check1")).checked = true;
-            console.log('okyobk');
-        }
+    if (localStorage.getItem("check1")!=null) {
+        document.getElementById(localStorage.getItem("check1")).checked = true;
+    }
 </script>
 
 </body>

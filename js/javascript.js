@@ -84,40 +84,15 @@ $( document ).ready(function(){
 	var name1="row1";
 	var index1= window.location.pathname;
 
-	//load data from page index.html to page index3.html
-	if (localStorage.getItem("input2")!= null) {
-	    var mySplitResult = localStorage.getItem("input2").split(":");
-    	for (var i = 0; i < mySplitResult.length ; i++) {
-    		if (mySplitResult.length<2) {
-    			$("#"+mySplitResult[i]).html(mySplitResult[i+1]);
-    			break;
-    		}
-    		else{
-    			$("#"+mySplitResult[i]).html(mySplitResult[i+1]);
-    		}
-		}
-	}
-
-	//load data from page index2.html to page index3.html
-	if (localStorage.getItem("lat")!= null) {
-	    var mylat = localStorage.getItem("lat").split(":");
-    	for (var t = 0; t < mylat.length ; t++) {
-    		if (mylat.length<2) {
-    			$("#"+mylat[t]).html(mylat[t+1]);
-    			break;
-    		}
-    		else{
-    			$("#"+mylat[t]).html(mylat[t+1]);
-    		}
-		}
-	}
+	loaddataindex();
+	
+	loaddataindex2();
 
 	if (localStorage.getItem("name1")!= null){
 		$('#name1').val(localStorage.getItem("name1"))
 	}
 
 	if (index1.search('index1') > -1 ) {
-		console.log(index1);
 		loadlabel();
 	}
 		
@@ -240,12 +215,10 @@ $( document ).ready(function(){
 
 		//show data page result
 		if (localStorage.getItem("check1")!=null) {
-			console.log(localStorage.getItem("check1"));
 
 			$('.inputcuoi2').html('<div class="checkbox1" style="color:black; background: white;">'+localStorage.getItem("check1")+'</div>' );
 			}
 		if (localStorage.getItem("check2")!=null) {
-			console.log(localStorage.getItem("check2"));
 			$('.inputcuoi3').html($('.inputcuoi3').html()+'<div class="checkbox2" style="color:black; background: white;">'+localStorage.getItem("check2")+'</div>' );
 			}
 
@@ -254,7 +227,7 @@ $( document ).ready(function(){
     		 localStorage.setItem("name1",$(this).val()) ;
 		});
 
-		//show operation _ in page index2.html
+		//show operation "_" in page index2.html
 		$('.lat1').click(function() {
 						lat1=$(this).attr("id");
 						rel3=$('#'+lat1).html();
@@ -269,7 +242,7 @@ $( document ).ready(function(){
 						u=1;
 						});		
 
-		//code keyboard
+		//code data when use keyboard
 		$('.input3').click(function() {
 
 			var res=$(this).attr("id");
@@ -354,13 +327,13 @@ $( document ).ready(function(){
 
 			case "rel":
 				
-				$("#"+rel1).html($('#table3_total').html().substring(0, $('#table3_total').html().length-1));
-
-				if (localStorage.getItem("input2")==null) {
-					localStorage.setItem("input2",rel1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-1));
+				if ($('#table3_total').html().charAt($('#table3_total').html().length-2)==".") {
+					$("#"+rel1).html($('#table3_total').html().substring(0, $('#table3_total').html().length-2));
+					localStorage.setItem("input2", localStorage.getItem("input2")+":"+rel1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-2));
 				}
 				else{
-				localStorage.setItem("input2", localStorage.getItem("input2")+":"+rel1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-1));
+					$("#"+rel1).html($('#table3_total').html().substring(0, $('#table3_total').html().length-1));
+					localStorage.setItem("input2", localStorage.getItem("input2")+":"+rel1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-1));
 				}
 
 				var o;
@@ -403,12 +376,13 @@ $( document ).ready(function(){
 
 			case "rel2":
 				
-				$("#"+lat1).html($('#table3_total').html().substring(0, $('#table3_total').html().length-1));
-				if (localStorage.getItem("lat")==null) {
-					localStorage.setItem("lat",lat1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-1));
+				if ($('#table3_total').html().charAt($('#table3_total').html().length-2)==".") {
+					$("#"+lat1).html($('#table3_total').html().substring(0, $('#table3_total').html().length-2));
+					localStorage.setItem("lat", localStorage.getItem("lat")+":"+lat1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-2));
 				}
 				else{
-				localStorage.setItem("lat", localStorage.getItem("lat")+":"+lat1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-1));
+					$("#"+lat1).html($('#table3_total').html().substring(0, $('#table3_total').html().length-1));
+					localStorage.setItem("lat", localStorage.getItem("lat")+":"+lat1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-1));
 				}
 
 				if (o==1 || (lat1.split("_")[1])<=7 ) {
@@ -527,6 +501,37 @@ $( document ).ready(function(){
 	    	}
 		}
 
+		//load data from page index.html to page index3.html
+		function loaddataindex(){	
+				if (localStorage.getItem("input2")!= null) {
+			    var mySplitResult = localStorage.getItem("input2").split(":");
+		    	for (var i = 0; i < mySplitResult.length ; i++) {
+		    		if (mySplitResult.length<2) {
+		    			$("#"+mySplitResult[i]).html(mySplitResult[i+1]);
+		    			break;
+		    		}
+		    		else{
+		    			$("#"+mySplitResult[i]).html(mySplitResult[i+1]);
+		    		}
+				}
+			}
+			}
+
+		//load data from page index2.html to page index3.html
+		function loaddataindex2(){
+				if (localStorage.getItem("lat")!= null) {
+			    var mylat = localStorage.getItem("lat").split(":");
+		    	for (var t = 0; t < mylat.length ; t++) {
+		    		if (mylat.length<2) {
+		    			$("#"+mylat[t]).html(mylat[t+1]);
+		    			break;
+		    		}
+		    		else{
+		    			$("#"+mylat[t]).html(mylat[t+1]);
+		    		}
+				}
+			}
+			}
 		//change color  in table 1 when reload
 		function color1(){
 			if (localStorage.getItem("cell")!=null) {
@@ -536,7 +541,6 @@ $( document ).ready(function(){
 		//change color  in table 2 when reload
 		function color2(){
 			if (localStorage.getItem("row")!=null) {
-				console.log(localStorage.getItem("row"));
 	    	document.getElementById(localStorage.getItem("row")).style.backgroundColor = "red";
 			}
 		}
@@ -562,6 +566,7 @@ $( document ).ready(function(){
 					$('.label2').html(name);
 
    		}
+
 	// show keyboard when click table index.html
 	$('.input2').click(function() {
 		$("#keyboard1").show();
@@ -581,35 +586,35 @@ $( document ).ready(function(){
 
 		});
 
-//exit keyboard when click x (close)
-$('#exit').click(function() {
+	//exit keyboard when click x (close)
+	$('#exit').click(function() {
 
-		rel3=$("#"+rel1).html();
-		if (u==1) {
-			rel3=$("#"+lat1).html();
-			u=0;
-			if (rel3=="_") {
-		    $("#"+lat1).html("");
-		   }
+			rel3=$("#"+rel1).html();
+			if (u==1) {
+				rel3=$("#"+lat1).html();
+				u=0;
+				if (rel3=="_") {
+			    $("#"+lat1).html("");
+			   }
 
-		   else if (rel3.charAt(0)!="_") {
-			   	$("#"+lat1).html(rel3.substring(0,rel3.indexOf("_")));
-		   }
-		   	$("#keyboard3").hide();
-	   		$("#table3").hide();
-		}
-		
-	   	if (rel3=="_") {
-		    $("#"+rel1).html("");
-	   	}
+			   else if (rel3.charAt(0)!="_") {
+				   	$("#"+lat1).html(rel3.substring(0,rel3.indexOf("_")));
+			   }
+			   	$("#keyboard3").hide();
+		   		$("#table3").hide();
+			}
+			
+		   	if (rel3=="_") {
+			    $("#"+rel1).html("");
+		   	}
 
-	   	else if (rel3.charAt(0)!="_") {
-		   	$("#"+rel1).html(rel3.substring(0,rel3.indexOf("_")));
-	   	}
+		   	else if (rel3.charAt(0)!="_") {
+			   	$("#"+rel1).html(rel3.substring(0,rel3.indexOf("_")));
+		   	}
 
-	   	$("#keyboard1").hide();
-	   	$("#table3").hide();
-});
+		   	$("#keyboard1").hide();
+		   	$("#table3").hide();
+	});
 
 });
 

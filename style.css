@@ -191,7 +191,6 @@
 	z-index: 2;
 	overflow: hidden;
 	color: white;
-
 }
 .input3:active{
 	background: white ;
@@ -473,7 +472,6 @@
 .table2{
 	width: 785px;
 	height: 100px;
-
 	float: left;
 	margin-left: 150px;
 	margin-top: 0px;
