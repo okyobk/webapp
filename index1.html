@@ -73,14 +73,10 @@
 function checkbox1(value1)
 {
     localStorage.setItem("check2",value1);
-    // localStorage.setItem("checkvalue2","1");
     console.log(localStorage.getItem("check2",value1));
-    // if(document.getElementById(localStorage.getItem("check2")).checked = true)
-    // document.getElementById(localStorage.getItem("check2")).checked = true;
 }
 
 if (localStorage.getItem("check2")!=null) {
-            // console.log('lagtu');
             document.getElementById(localStorage.getItem("check2")).checked = true;
             console.log('lagtu');
         }

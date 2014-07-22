@@ -38,7 +38,6 @@
 	width: 227px;
 	text-align: center;
 	font-size: 24px;
-	/*font color: red;*/
 	height: 40px;
 	line-height: 35px;
 	border: 1px solid #7e8697;
@@ -46,8 +45,6 @@
 	overflow: hidden;
 	margin-top: 294;
 	margin-left: 186px;
-	/*background: white;*/
-	/*color: white;*/
 }
 .inputcuoi2{
 	display: block;
@@ -55,17 +52,12 @@
 	width: 880px;
 	text-align: center;
 	font-size: 24px;
-	/*font color: red;*/
 	height: 70px;
 	line-height: 35px;
-	/*border: 1px solid #7e8697;*/
 	word-wrap: break-word;
 	overflow: hidden;
 	margin-top: 0px;
 	margin-left: 70px;
-	/*border: 2px solid red;*/
-	/*background: white;*/
-	/*color: white;*/
 }
 .inputcuoi3 {
 
@@ -74,17 +66,12 @@
 	width: 880px;
 	text-align: center;
 	font-size: 24px;
-	/*font color: red;*/
 	height: 200px;
 	line-height: 35px;
-	/*border: 1px solid #7e8697;*/
 	word-wrap: break-word;
 	overflow: hidden;
 	margin-top: 0px;
 	margin-left: 70px;
-	/*border: 2px solid red;*/
-	/*background: white;*/
-	/*color: white;*/
 }
 .inputcuoi4 {
 
@@ -93,89 +80,58 @@
 	width: 880px;
 	text-align: center;
 	font-size: 24px;
-	/*font color: red;*/
 	height: 260px;
 	line-height: 35px;
-	/*border: 1px solid #7e8697;*/
 	word-wrap: break-word;
 	overflow: hidden;
 	margin-top: 7px;
 	margin-left: 70px;
-	/*border: 2px solid red;*/
-	/*background: white;*/
-	/*color: white;*/
 }
 .checkboxcell1{
-	/*display: block;*/
 	float: left;
 	width: 300px;
 	text-align: left;
 	font-size: 20px;
-	/*font color: red;*/
 	height: 25px;
-	/*line-height: 35px;*/
-	/*border: 1px solid #7e8697;*/
 	word-wrap: break-word;
 	overflow: hidden;
 	margin-top: 90px;
 	margin-left: 200px;
-	/*border: 2px solid red;*/
-	/*background: white;*/
-	/*color: white;*/
 }
 .checkboxcell2{
-	/*display: block;*/
 	float: left;
 	width: 371px;
 	text-align: left;
 	font-size: 20px;
-	/*font color: red;*/
 	height: 25px;
-	/*line-height: 35px;*/
-	/*border: 1px solid #7e8697;*/
 	word-wrap: break-word;
 	overflow: hidden;
 	margin-top: 3px;
 	margin-left: 130px;
-	/*border: 2px solid red;*/
-	/*background: white;*/
-	/*color: white;*/
 }
 .checkbox1{
-	/*display: block;*/
 	float: left;
 	width: 300px;
 	text-align: left;
 	font-size: 20px;
-	/*font color: red;*/
 	height: 34px;
 	line-height: 35px;
-	/*border: 1px solid #7e8697;*/
 	word-wrap: break-word;
 	overflow: hidden;
 	margin-top: 18px;
 	margin-left: 350px;
-	/*border: 2px solid red;*/
-	/*background: white;*/
-	/*color: white;*/
 }
 .checkbox2{
-	/*display: block;*/
 	float: left;
 	width: 300px;
 	text-align: left;
 	font-size: 20px;
-	/*font color: red;*/
 	height: 34px;
 	line-height: 35px;
-	/*border: 1px solid #7e8697;*/
 	word-wrap: break-word;
 	overflow: hidden;
 	margin-top: 10px;
 	margin-left: 440px;
-	/*border: 2px solid red;*/
-	/*background: white;*/
-	/*color: white;*/
 }
 .input1 {
 	display: block;
@@ -229,24 +185,17 @@
 .input3 {
 	float: left;
 	width: 55px;
-	/*line-height: 100px;*/
 	text-align: center;
 	font-size: 25px;
 	height: 43px;
 	z-index: 2;
 	overflow: hidden;
-	/*border: none !important;*/
 	color: white;
 
-	/*border: 1px solid red;*/
 }
-/*.input3:hover{
-	background: red;
-}*/
 .input3:active{
 	background: white ;
 	opacity: 0.2;
-    /*filter: alpha(opacity=10);*/
 }
 
 .label1 {
@@ -518,9 +467,7 @@
 	float: left;
 	margin-left: 115px;
 	margin-top: 80px;
-	/*border: 2px solid red;*/
 	clear: both;
-	/*padding-left: 0px;*/
 	position:relative;
 }
 .table2{
@@ -541,21 +488,16 @@
 	margin-top: 230px;
 	display: none;
 	position:absolute;
-
-	/*border: 1px solid blue;*/
 }
 #table4{
 	width: 655px;
 	height: 30px;
-	/*background-color: red;*/
 	border: 5px solid red;
 	z-index: 2;
 	float: left;
 	margin-left: 162px;
 	margin-top: -30px;
 	border: 2px ; 
-	/*display: none;*/
-	/*position:absolute;*/
 }
 .button-check1{
 	background-image: url(images/nut1.png);
@@ -588,7 +530,6 @@ label {
 }
 .input99 {
     position: absolute;
-    /*top: 0px;*/
     left: -9999px;
 }
 
