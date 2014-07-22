@@ -251,53 +251,40 @@ $( document ).ready(function(){
 
 		switch(variable){
 			case "mul":
-				if(res1=='-'){
-					$('#table3_total').html("");
+				if(res1=='-_'){
+					$('#table3_total').html("_");
 				}
-				else if(res1=='+'){
-					$('#table3_total').html("");
-					$('#table3_total').html("-");
+				else if(res1=='_' || res1=='+_'){
+					$('#table3_total').html("-_");
 				}
-				else if(res1==''){
-					$('#table3_total').html("-");
-				}
-				else if (($('#table3_total').html().split("-").length - 1)==1) {
+				else if ($('#table3_total').html().charAt(0)=="-") {
 					$('#table3_total').html();
-
 				}
-				else if (($('#table3_total').html().split("+").length - 1)) {
+				else if ($('#table3_total').html().charAt(0)=="+") {
 					$('#table3_total').html($('#table3_total').html().replace("+","-"));
-
 				}
 				else{
 					$('#table3_total').html("-" + $('#table3_total').html() );
 				}
-
 			break;
 
 
 			case "add":
-				if(res1=='+'){
-					$('#table3_total').html("");
+				if(res1=='+_'){
+					$('#table3_total').html("_");
 				}
-				else if(res1=='-'){
-					$('#table3_total').html("");
-					$('#table3_total').html("+");
+				else if(res1=='_' || res1=='-_'){
+					$('#table3_total').html("+_");
 				}
-				else if(res1==''){
-					$('#table3_total').html("+");
-				}
-				else if (($('#table3_total').html().split("+").length - 1)) {
+				else if ($('#table3_total').html().charAt(0)=="+") {
 					$('#table3_total').html();
 				}
-				else if (($('#table3_total').html().split("-").length - 1)) {
+				else if ($('#table3_total').html().charAt(0)=="-") {
 					$('#table3_total').html($('#table3_total').html().replace("-","+"));
-
 				}
 				else{
 					$('#table3_total').html("+" + $('#table3_total').html() );
 				}
-
 			break;
 
 			case "back":
@@ -316,7 +303,7 @@ $( document ).ready(function(){
 				else if (($('#table3_total').html().split(".").length - 1)) {
 					$('#table3_total').html();
 				}
-				else if(res1=='+'||res1=='-'){
+				else if(res1=='+_'||res1=='-_'){
 					$('#table3_total').html();
 				}
 				else{
