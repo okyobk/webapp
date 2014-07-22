@@ -248,6 +248,7 @@ $( document ).ready(function(){
 			var res=$(this).attr("id");
 			var variable=res.split("_")[1];
 			var res1=$('#table3_total').html();
+			var o;
 
 		switch(variable){
 			case "mul":
@@ -313,17 +314,32 @@ $( document ).ready(function(){
 			break;
 
 			case "rel":
-				
 				if ($('#table3_total').html().charAt($('#table3_total').html().length-2)==".") {
-					$("#"+rel1).html($('#table3_total').html().substring(0, $('#table3_total').html().length-2));
-					localStorage.setItem("input2", localStorage.getItem("input2")+":"+rel1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-2));
+						$("#"+rel1).html($('#table3_total').html().substring(0, $('#table3_total').html().length-2));
+						localStorage.setItem("input2", localStorage.getItem("input2")+":"+rel1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-2));
 				}
 				else{
-					$("#"+rel1).html($('#table3_total').html().substring(0, $('#table3_total').html().length-1));
-					localStorage.setItem("input2", localStorage.getItem("input2")+":"+rel1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-1));
+					if (localStorage.getItem("input2")==null) {
+							if ($('#table3_total').html().substring(0, $('#table3_total').html().length-1)== "+" || $('#table3_total').html().substring(0, $('#table3_total').html().length-1)=="-" ) {
+							$("#"+rel1).html("");
+							}
+						else{
+								$("#"+rel1).html($('#table3_total').html().substring(0, $('#table3_total').html().length-1));
+								localStorage.setItem("input2", rel1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-1));
+							}
+					}
+					else{
+						if ($('#table3_total').html().substring(0, $('#table3_total').html().length-1)== "+" || $('#table3_total').html().substring(0, $('#table3_total').html().length-1)=="-" ) {
+							$("#"+rel1).html("");
+							}
+						else{
+								$("#"+rel1).html($('#table3_total').html().substring(0, $('#table3_total').html().length-1));
+								localStorage.setItem("input2", localStorage.getItem("input2")+":"+rel1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-1));
+							}
+					}
+					
 				}
 
-				var o;
 				o = (+(rel1.split("e")[1]).substring(0,1))+(+1);
 
 				if (o==1 || o==2 || (rel1.split("_")[1])<=7 ) {
@@ -368,8 +384,28 @@ $( document ).ready(function(){
 					localStorage.setItem("lat", localStorage.getItem("lat")+":"+lat1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-2));
 				}
 				else{
-					$("#"+lat1).html($('#table3_total').html().substring(0, $('#table3_total').html().length-1));
-					localStorage.setItem("lat", localStorage.getItem("lat")+":"+lat1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-1));
+
+					if (localStorage.getItem("lat")==null) {
+						if ($('#table3_total').html().substring(0, $('#table3_total').html().length-1)== "+" || $('#table3_total').html().substring(0, $('#table3_total').html().length-1)=="-" ) {
+							$("#"+lat1).html("");
+						}
+						else{
+							$("#"+lat1).html($('#table3_total').html().substring(0, $('#table3_total').html().length-1));
+							localStorage.setItem("lat", lat1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-1));
+						}
+					}
+					else{
+						if ($('#table3_total').html().substring(0, $('#table3_total').html().length-1)== "+" || $('#table3_total').html().substring(0, $('#table3_total').html().length-1)=="-" ) {
+							$("#"+lat1).html("");
+						}
+						else{
+							$("#"+lat1).html($('#table3_total').html().substring(0, $('#table3_total').html().length-1));
+							localStorage.setItem("lat", localStorage.getItem("lat")+":"+lat1+":"+$('#table3_total').html().substring(0, $('#table3_total').html().length-1));
+						}
+					}
+
+
+					
 				}
 
 				if (o==1 || (lat1.split("_")[1])<=7 ) {
@@ -379,6 +415,7 @@ $( document ).ready(function(){
 					if ($("#"+lat1).html("")){
 						$("#"+lat1).html("_");
 					}
+					console.log(lat1.split("_")[1]);
 
 					if ((lat1.split("_")[1])==8) {
 	   					$("#keyboard3").hide();	
@@ -488,17 +525,20 @@ $( document ).ready(function(){
 	    	}
 		}
 
+
 		//load data from page index.html to page index3.html
 		function loaddataindex(){	
 				if (localStorage.getItem("input2")!= null) {
 			    var mySplitResult = localStorage.getItem("input2").split(":");
 		    	for (var i = 0; i < mySplitResult.length ; i++) {
-		    		if (mySplitResult.length<2) {
+		    		if (mySplitResult.length<=2) {
+		    			console.log(mySplitResult[i+1]);
 		    			$("#"+mySplitResult[i]).html(mySplitResult[i+1]);
 		    			break;
 		    		}
 		    		else{
 		    			$("#"+mySplitResult[i]).html(mySplitResult[i+1]);
+		    			i=i+1;
 		    		}
 				}
 			}
@@ -515,6 +555,7 @@ $( document ).ready(function(){
 		    		}
 		    		else{
 		    			$("#"+mylat[t]).html(mylat[t+1]);
+		    			t=t+1;
 		    		}
 				}
 			}
@@ -557,8 +598,8 @@ $( document ).ready(function(){
 	// show keyboard when click table index.html
 	$('.input2').click(function() {
 		$("#keyboard1").show();
-	   $("#table3").show();
-	   $("#exit").show;
+	   	$("#table3").show();
+	   	$("#exit").show;
 
 		rel1=$(this).attr("id");
 		rel3=$("#"+rel1).html();
